@@ -1,0 +1,9 @@
+cd trezor-lib
+git init\n
+git remote add origin https://github.com/trustwallet/wallet-core.git\n
+git config core.sparseCheckout true\n
+mkdir -p .git/info\n
+cat > .git/info/sparse-checkout <<'EOF'\ntrezor-crypto/\nEOF\n
+git fetch --depth=1 origin master\n
+git checkout -f FETCH_HEAD
+
